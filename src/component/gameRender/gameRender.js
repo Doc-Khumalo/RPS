@@ -28,8 +28,13 @@ class gameRender extends React.Component {
           )
         })}
         <div className="sub_text">
-          <p>Your Selection is: <b>{this.props.data.randomUserOption}</b></p>
+          {this.props.data.randomUserOption !== undefined &&
+            <p>Your Selection is: <b>{this.props.data.randomUserOption}</b></p>
+          }
+
+          {this.props.data.randomValueAI !== undefined &&
           <p>A I Selection is: <b>{this.props.data.randomValueAI}</b></p>
+          }
         </div>
         {this.props.data.roundWinner === 'Draw' &&
         <p>There was no winner, its a draw</p>
