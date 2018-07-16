@@ -81,28 +81,28 @@ class Game extends Component {
 
     this.mode(this.state.winner.filter(item => item !== 'Draw'));
     console.log(this.state.winner)
-  }
+  };
 
   // function to decide overall winner after 5 successful tries
   mode = (store) => {
-    var frequency = {};  // array of frequency.
-    var max = 2;  // holds the max frequency.
-    var result;   // holds the max frequency element.
-    for(var v in store) {
+    let frequency = {};  // array of frequency.
+    let max = 2;  // holds the max frequency.
+    let result;   // holds the max frequency element.
+    for(let v in store) {
       frequency[store[v]]=(frequency[store[v]] || 0)+1; // increment frequency.
       if(frequency[store[v]] > max) { // is this frequency > max so far ?
         max = frequency[store[v]];  // update max.
         result = store[v];        // update result.
       }
     }
-    this.setState({ overallWinner: result })
+    this.setState({ overallWinner: result });
 
     if(result !== undefined) {
       // call function to show overall winner after 5 successful tries
       this.togglePopup();
     }
     console.log('result', result);
-  }
+  };
 
   // function to show overall winner after 5 successful tries
   togglePopup = () => {
@@ -114,7 +114,7 @@ class Game extends Component {
       // call function to reset state after overall winner is produced
       this.resetState();
     }
-  }
+  };
 
   render() {
     return (

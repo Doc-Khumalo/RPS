@@ -4,7 +4,6 @@ import './gameRender.scss';
 
 class gameRender extends React.Component {
   render() {
-
     return (
       <div>
         {this.props.data.showPopup ?
@@ -21,8 +20,9 @@ class gameRender extends React.Component {
               className="btn"
               key={i}
               onClick={() => this.props.handleRandomise(item)}
-            ><span>
-              {item}
+            >
+              <span>
+                {item}
               </span>
             </button>
           )
@@ -31,20 +31,19 @@ class gameRender extends React.Component {
           {this.props.data.randomUserOption !== undefined &&
             <p>Your Selection is: <b>{this.props.data.randomUserOption}</b></p>
           }
-
           {this.props.data.randomValueAI !== undefined &&
-          <p>A I Selection is: <b>{this.props.data.randomValueAI}</b></p>
+            <p>A I Selection is: <b>{this.props.data.randomValueAI}</b></p>
           }
         </div>
         {this.props.data.roundWinner === 'Draw' &&
-        <p>There was no winner, its a draw</p>
+          <p>There was no winner, its a draw</p>
         }
         {this.props.data.roundWinner !== undefined && this.props.data.roundWinner !== 'Draw' &&
-        <p>Round winner goes to {this.props.data.roundWinner}</p>
+          <p>Round winner goes to {this.props.data.roundWinner}</p>
         }
       </div>
     )
   }
-};
+}
 
 export default gameRender;
