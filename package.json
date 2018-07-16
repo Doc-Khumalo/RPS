@@ -1,6 +1,7 @@
 {
   "name": "game",
   "version": "0.1.0",
+  "homepage": "https://doc-khumalo.github.io/RPS/",
   "private": true,
   "repository": {
     "type": "git",
